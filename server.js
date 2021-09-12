@@ -16,7 +16,8 @@ app.get('/images', ({ query }, res) => {
 
 app.get(/^\/(car-images|avatars)\//, async (req, res) => {
   try {
-    // Resize images based on the param: size (used for both width and height)
+    // Resize images based on the param - `size` (used for both width and height)
+    // Apply effects with the param - `effect`. Allowed values: blur | grayscale | negate
     const resizeOptions = isNaN(Number(req.query.size))
       ? null
       : {
@@ -24,10 +25,29 @@ app.get(/^\/(car-images|avatars)\//, async (req, res) => {
           height: Number(req.query.size),
           fit: 'cover',
         }
+
     const imagePath = path.join(__dirname, `public/${req._parsedUrl.pathname}.jpg`)
-    const resizedImage = await sharp(imagePath).resize(resizeOptions).toBuffer()
+    let resizedImage = sharp(imagePath).resize(resizeOptions)
+
+    switch (req.query.effect) {
+      case 'blur':
+        resizedImage = resizedImage.blur(4)
+        break
+
+      case 'grayscale':
+        resizedImage = resizedImage.grayscale()
+        break
+
+      case 'negate':
+        resizedImage = resizedImage.negate()
+        break
+
+      default:
+        break
+    }
+
     res.contentType('image/jpeg')
-    res.status(200).end(resizedImage, 'binary')
+    res.status(200).end(await resizedImage.toBuffer(), 'binary')
   } catch (error) {
     res.status(400)
   }

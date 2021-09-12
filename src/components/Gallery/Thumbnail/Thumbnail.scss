@@ -9,20 +9,24 @@
 
   padding: 2px;
 
-  button.thumbnail-image {
+  .thumbnail-image {
+    display: inline-block;
     height: 100%;
     width: 100%;
     cursor: pointer;
     transition: 0.15s ease-out;
     background-color: #000;
+    outline: none;
 
     .overlay {
       height: 100%;
       width: 100%;
+      transition: 0.3s;
     }
 
     &:focus {
       .overlay {
+        transition: 0.3s;
         background-color: rgba(255, 255, 255, 0.4);
       }
     }
