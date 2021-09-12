@@ -6,7 +6,7 @@ import GalleryControl from './components/GalleryControl/GalleryControl'
 const App = () => {
   const [images, setImages] = useState()
   const [selectedFilter, setSelectedFilter] = useState('none')
-  const [rowSize, setRowSize] = useState('4')
+  const [rowSize, setRowSize] = useState('6')
 
   useEffect(() => {
     fetch(`images`)
@@ -28,7 +28,7 @@ const App = () => {
         rowSize={rowSize}
         setRowSize={setRowSize}
       />
-      <Gallery images={images} selectedFilter={selectedFilter} />
+      <Gallery images={images} selectedFilter={selectedFilter} rowSize={rowSize} />
     </div>
   )
 }

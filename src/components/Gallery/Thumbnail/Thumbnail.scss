@@ -1,6 +1,8 @@
 @import '../../../styling/tokens.scss';
 
 .thumbnail-container {
+  height: 100%;
+
   &::before {
     content: '';
     float: left;

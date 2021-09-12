@@ -5,10 +5,8 @@
   flex-wrap: wrap;
 
   & > div {
-    flex-basis: 25%;
-
     @media screen and (max-width: 450px) {
-      flex-basis: 50%;
+      flex-basis: 50% !important;
     }
   }
 }
