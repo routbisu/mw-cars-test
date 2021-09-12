@@ -1,0 +1,15 @@
+.gallery-control {
+  margin-bottom: 10px;
+  padding: 3px;
+
+  display: flex;
+  justify-content: space-between;
+
+  .gallery-row-size {
+    display: none;
+
+    @media screen and (min-width: 500px) {
+      display: inherit;
+    }
+  }
+}

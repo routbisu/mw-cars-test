@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './App.scss'
 import Gallery from './components/Gallery/Gallery'
+import GalleryControl from './components/GalleryControl/GalleryControl'
 
 const App = () => {
   const [images, setImages] = useState()
+  const [selectedFilter, setSelectedFilter] = useState('none')
+  const [rowSize, setRowSize] = useState('4')
 
   useEffect(() => {
-    fetch('images')
+    fetch(`images`)
       .then((res) => res.json())
       .then((data) => {
         console.log('Success:', data)
@@ -15,11 +18,17 @@ const App = () => {
       .catch((error) => {
         console.error('Error:', error)
       })
-  }, [])
+  }, [selectedFilter])
 
   return (
     <div className="app-container">
-      <Gallery images={images} />
+      <GalleryControl
+        selectedFilter={selectedFilter}
+        setSelectedFilter={setSelectedFilter}
+        rowSize={rowSize}
+        setRowSize={setRowSize}
+      />
+      <Gallery images={images} selectedFilter={selectedFilter} />
     </div>
   )
 }

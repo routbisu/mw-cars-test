@@ -2,11 +2,10 @@ import React from 'react'
 import './Gallery.scss'
 import Thumbnail from './Thumbnail/Thumbnail'
 
-const Gallery = ({ images }) => {
+const Gallery = ({ images, selectedFilter }) => {
   return (
     <div className="gallery-container">
-      {images &&
-        images.map((image) => <Thumbnail key={image.id} image={image} />)}
+      {images && images.map((image) => <Thumbnail selectedFilter={selectedFilter} key={image.id} image={image} />)}
     </div>
   )
 }
