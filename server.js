@@ -16,13 +16,12 @@ app.get('/images', ({ query }, res) => {
 
 app.get(/^\/(car-images|avatars)\//, async (req, res) => {
   try {
-    // Resize images based on the param - `size` (used for both width and height)
+    // Resize images based on the param - `width`
     // Apply effects with the param - `effect`. Allowed values: blur | grayscale | negate
     const resizeOptions = isNaN(Number(req.query.size))
       ? null
       : {
           width: Number(req.query.size),
-          height: Number(req.query.size),
           fit: 'cover',
         }
 

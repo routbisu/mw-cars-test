@@ -1,0 +1,47 @@
+@import '../../../../styling/tokens.scss';
+
+.vehicle-info-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(transparent 5%, $info-bg 50%, #fff);
+  padding: 15px;
+  padding-top: 80px;
+  z-index: 350;
+
+  .profile-section {
+    display: flex;
+    align-items: center;
+
+    .profile-picture {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+    }
+
+    .user-section {
+      text-align: left;
+      padding-left: 10px;
+      flex: 1;
+
+      p.name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      p.bio {
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+      }
+    }
+  }
+
+  .description-section {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+}
