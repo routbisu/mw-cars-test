@@ -1,0 +1,42 @@
+@import '../../styling/tokens.scss';
+
+.contact-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $modal-bg;
+  z-index: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    background: $white;
+    padding: 40px 30px;
+    width: 95%;
+    max-width: 600px;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .form-control {
+      margin-bottom: 15px;
+    }
+
+    .buttons-section {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+
+      .cancel-btn {
+        margin-left: 10px;
+      }
+    }
+  }
+}

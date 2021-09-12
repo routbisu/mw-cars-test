@@ -14,22 +14,5 @@
     background: $black;
     padding: 20px;
     text-align: center;
-
-    button.contact-us-btn {
-      background: transparent;
-      padding: 20px;
-      cursor: pointer;
-      color: $white;
-      font-size: 1.1rem;
-      border: 1px dotted $brand-primary;
-      transition: 0.3s;
-
-      &:hover,
-      &:focus {
-        background: rgba($brand-primary, 0.8);
-        color: $black;
-        transition: 0.3s;
-      }
-    }
   }
 }

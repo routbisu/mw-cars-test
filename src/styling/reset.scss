@@ -84,7 +84,8 @@ summary,
 time,
 mark,
 audio,
-video {
+video,
+input {
   margin: 0;
   padding: 0;
   border: 0;
@@ -141,4 +142,8 @@ button {
   border: none;
   border-radius: 0;
   padding: 0;
+}
+
+input {
+  outline: none;
 }

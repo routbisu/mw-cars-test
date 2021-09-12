@@ -1,0 +1,28 @@
+@import '../../../styling/tokens.scss';
+
+.mw-button {
+  height: 40px;
+  padding: 0px 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: $black;
+  color: $white;
+  border: 2px solid transparent;
+
+  &:hover,
+  &:focus {
+    background: rgba($black, 0.9);
+  }
+
+  &.secondary {
+    background: $brand-primary;
+    color: $black;
+    border: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+      background: rgba($brand-primary, 0.8);
+      border: 1px dotted $black;
+    }
+  }
+}

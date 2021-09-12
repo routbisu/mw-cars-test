@@ -1,0 +1,23 @@
+@import '../../../styling/tokens.scss';
+
+.text-input-container {
+  label {
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    padding: 10px 12px;
+    border: 2px solid $black;
+    display: block;
+    border-radius: 0;
+    width: 100%;
+    font-size: 0.95rem;
+
+    &:focus,
+    &:hover {
+      background: rgba($brand-primary, 0.2);
+    }
+  }
+}

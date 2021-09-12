@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './App.scss'
+import ContactForm from './components/ContactForm/ContactForm'
+import Button from './components/formControls/Button/Button'
 import Gallery from './components/Gallery/Gallery'
 import GalleryControl from './components/GalleryControl/GalleryControl'
 
 const App = () => {
   const [images, setImages] = useState()
+  const [showContactForm, setShowContactForm] = useState()
   const [selectedFilter, setSelectedFilter] = useState('none')
   const [rowSize, setRowSize] = useState('5')
 
@@ -22,6 +25,7 @@ const App = () => {
 
   return (
     <div className="app-container">
+      {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
       <div className="main-container">
         <GalleryControl
           selectedFilter={selectedFilter}
@@ -32,7 +36,9 @@ const App = () => {
         <Gallery images={images} selectedFilter={selectedFilter} rowSize={rowSize} />
       </div>
       <footer>
-        <button className="contact-us-btn">Contact Us</button>
+        <Button onClick={() => setShowContactForm(true)} variant="secondary">
+          Contact Us
+        </Button>
       </footer>
     </div>
   )
