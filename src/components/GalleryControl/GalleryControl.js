@@ -12,6 +12,7 @@ const filters = [
 const rowSizes = [
   { key: '2', label: '2' },
   { key: '4', label: '4' },
+  { key: '5', label: '5' },
   { key: '6', label: '6' },
 ]
 
