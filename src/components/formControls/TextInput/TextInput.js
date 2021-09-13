@@ -1,11 +1,16 @@
 import React from 'react'
+import { useField } from 'formik'
 import './TextInput.scss'
 
-const TextInput = ({ name, label }) => {
+const TextInput = ({ label, ...rest }) => {
+  const [field, meta] = useField(rest)
+  const errored = meta.touched && meta.error
+
   return (
     <div className="text-input-container">
-      <label htmlFor={name}>{label}</label>
-      <input type="text" name={name} />
+      <label htmlFor={field.name}>{label}</label>
+      <input type="text" {...field} {...rest} className={errored && 'errored'} />
+      {errored && <div className="error">{meta.error}</div>}
     </div>
   )
 }

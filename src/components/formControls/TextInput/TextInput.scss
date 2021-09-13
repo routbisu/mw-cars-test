@@ -19,5 +19,15 @@
     &:hover {
       background: rgba($brand-primary, 0.2);
     }
+
+    &.errored {
+      border-color: $error;
+    }
+  }
+
+  .error {
+    color: $error;
+    font-size: 0.8rem;
+    margin-top: 7px;
   }
 }
